@@ -67,3 +67,12 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+readonly static List<string> m_saveStates = new List<string>(){ "File Saved", "Saved Again", "And Again" };
+ 
+private void button_Click(object sender, EventArgs e)
+{
+    int stateIndex = m_saveStates.Contains(label1.Text)) ? m_saveStates.IndexOf(label1.Text) : 0;
+    stateIndex = (stateIndex + 1) % m_saveStates.Count;
+    label1.Text = m_saveStates[stateIndex ];
+} 
